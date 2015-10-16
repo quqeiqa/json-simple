@@ -36,9 +36,9 @@ public class JSONObject extends HashMap implements Map, JSONAware, JSONStreamAwa
 	}
 	
 	/**
-+	 * Get the string value. If value is null (because not found?), returns @defaultValue
++	 * Get the string value. If object value is null (because not found?), returns @defaultValue
 +	**/
-+	public string getString(string key, string defaultValue="") {
++	public string getString(string key, string defaultValue) {
 +		Object value = get(key);
 +		if((string)value == null) {
 +			return defaultValue;
@@ -46,22 +46,36 @@ public class JSONObject extends HashMap implements Map, JSONAware, JSONStreamAwa
 +			return (string)value;
 +		}
 +	}
+	
+	/**
++	 * Get the string value. If object value is null (because not found?), returns empty string
++	**/
+	public string getString(string key) {
+		return getString(key, "");
+	}
 +	
 +	/**
-+	 * Get the long int value. If value is null (because not found?), returns @defaultValue
++	 * Get the long int value. If object value is null (because not found?), returns @defaultValue
 +	**/
-+	public long getLong(string key, long defaultValue = 0) {
++	public long getLong(string key, long defaultValue) {
 +		Object value = get(key);
 +		if(value == null)
 +			return defaultValue;
 +		else
 +			return (long)value;
 +	}
+	
+	/**
++	 * Get the long int value. If object value is null (because not found?), returns 0
++	**/
+	public long getLong(string key) {
+		return getLong(key, 0)
+	}
 +	
 +	/**
-+	 * Get the double float value. If value is null (because not found?), returns @defaultValue
++	 * Get the double float value. If object value is null (because not found?), returns @defaultValue
 +	**/
-+	public double getDouble(string key, double defaultValue = 0.0) {
++	public double getDouble(string key, double defaultValue) {
 +		Object value = get(key);
 +		if(value == null)
 +			return defaultValue;
@@ -69,6 +83,12 @@ public class JSONObject extends HashMap implements Map, JSONAware, JSONStreamAwa
 +			return (double)value;
 +	}
  	
+ 	/**
++	 * Get the double float value. If object value is null (because not found?), returns 0.0
++	**/
+ 	public double getDouble(string key) {
+ 		return getDouble(key, 0.0);
+ 	}
 
     /**
      * Encode a map into JSON text and write it to out.
