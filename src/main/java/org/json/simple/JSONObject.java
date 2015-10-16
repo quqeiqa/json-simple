@@ -37,55 +37,69 @@ public class JSONObject extends HashMap implements Map, JSONAware, JSONStreamAwa
 	
 	
 	/**
-+	 * Get the string value. If object value is null (because not found?), returns @defaultValue
++	 * Get the string value. If object value is null, returns default value.
+	 * @param key
+	 * @param defaultValue
+	 * @return string value or 'defaultValue'
 +	**/
 +	public String getString(String key, String defaultValue) {
 +		Object value = get(key);
-+		if((string)value == null) {
++		if((String)value == null) {
 +			return defaultValue;
 +		} else {
-+			return (string)value;
++			return (String)value;
 +		}
 +	}
-	
 	/**
-+	 * Get the string value. If object value is null (because not found?), returns empty string
++	 * Get the string value. If object value is null, returns empty string
+	 * @param key
+	 * @return string value or empty string
 +	**/
-	public string getString(String key) {
+	public String getString(String key) {
 		return getString(key, "");
 	}
 +	
 +	/**
-+	 * Get the long int value. If object value is null (because not found?), returns @defaultValue
++	 * Get the long int value. If object value is null, returns default value.
+	 * @param key
+	 * @param defaultValue
+	 * @return long int value or 'defaultValue'
 +	**/
 +	public long getLong(String key, long defaultValue) {
 +		Object value = get(key);
-+		if(value == null)
++		if(value == null) {
 +			return defaultValue;
-+		else
++		} else {
 +			return (long)value;
+		}
 +	}
-	
 	/**
-+	 * Get the long int value. If object value is null (because not found?), returns 0
++	 * Get the long int value. If object value is null, returns 0
+	 * @param key
+	 * @return long int value or 0
 +	**/
 	public long getLong(String key) {
 		return getLong(key, 0)
 	}
 +	
 +	/**
-+	 * Get the double float value. If object value is null (because not found?), returns @defaultValue
++	 * Get the double float value. If object value is null, returns default value.
+	 * @param key
+	 * @param defaultValue 
+	 * @return double float value or 'defaultValue'
 +	**/
 +	public double getDouble(String key, double defaultValue) {
 +		Object value = get(key);
-+		if(value == null)
++		if(value == null) {
 +			return defaultValue;
-+		else
++		} else {
 +			return (double)value;
+		}
 +	}
- 	
  	/**
-+	 * Get the double float value. If object value is null (because not found?), returns 0.0
++	 * Get the double float value. If object value is null, returns 0.0
+	 * @param key 
+	 * @return double float value or 0.0
 +	**/
  	public double getDouble(String key) {
  		return getDouble(key, 0.0);
