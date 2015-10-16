@@ -39,7 +39,7 @@ public class JSONObject extends HashMap implements Map, JSONAware, JSONStreamAwa
 	/**
 +	 * Get the string value. If object value is null (because not found?), returns @defaultValue
 +	**/
-+	public string getString(string key, string defaultValue) {
++	public String getString(String key, String defaultValue) {
 +		Object value = get(key);
 +		if((string)value == null) {
 +			return defaultValue;
@@ -51,14 +51,14 @@ public class JSONObject extends HashMap implements Map, JSONAware, JSONStreamAwa
 	/**
 +	 * Get the string value. If object value is null (because not found?), returns empty string
 +	**/
-	public string getString(string key) {
+	public string getString(String key) {
 		return getString(key, "");
 	}
 +	
 +	/**
 +	 * Get the long int value. If object value is null (because not found?), returns @defaultValue
 +	**/
-+	public long getLong(string key, long defaultValue) {
++	public long getLong(String key, long defaultValue) {
 +		Object value = get(key);
 +		if(value == null)
 +			return defaultValue;
@@ -69,14 +69,14 @@ public class JSONObject extends HashMap implements Map, JSONAware, JSONStreamAwa
 	/**
 +	 * Get the long int value. If object value is null (because not found?), returns 0
 +	**/
-	public long getLong(string key) {
+	public long getLong(String key) {
 		return getLong(key, 0)
 	}
 +	
 +	/**
 +	 * Get the double float value. If object value is null (because not found?), returns @defaultValue
 +	**/
-+	public double getDouble(string key, double defaultValue) {
++	public double getDouble(String key, double defaultValue) {
 +		Object value = get(key);
 +		if(value == null)
 +			return defaultValue;
@@ -87,7 +87,7 @@ public class JSONObject extends HashMap implements Map, JSONAware, JSONStreamAwa
  	/**
 +	 * Get the double float value. If object value is null (because not found?), returns 0.0
 +	**/
- 	public double getDouble(string key) {
+ 	public double getDouble(String key) {
  		return getDouble(key, 0.0);
  	}
 
