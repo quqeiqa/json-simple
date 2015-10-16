@@ -35,6 +35,7 @@ public class JSONObject extends HashMap implements Map, JSONAware, JSONStreamAwa
 		super(map);
 	}
 	
+	
 	/**
 +	 * Get the string value. If object value is null (because not found?), returns @defaultValue
 +	**/
