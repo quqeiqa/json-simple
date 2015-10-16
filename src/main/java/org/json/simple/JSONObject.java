@@ -34,7 +34,40 @@ public class JSONObject extends HashMap implements Map, JSONAware, JSONStreamAwa
 	public JSONObject(Map map) {
 		super(map);
 	}
-
+	
+	/**
+	 * Get the string value. If value is null (because not found?), returns @defaultValue
+	**/
+	public String getString(string key, string defaultValue="") {
+		Object value = get(key);
+		if((String)value == null) {
+			return defaultValue;
+		} else {
+			return (String)value;
+		}
+	}
+	
+	/**
+	 * Get the long int value. If value is null (because not found?), returns @defaultValue
+	**/
+	public long getLong(string key, long defaultValue = 0) {
+		Object value = get(key);
+		if(value == null)
+			return defaultValue;
+		else
+			return (long)value;
+	}
+	
+	/**
+	 * Get the double float value. If value is null (because not found?), returns @defaultValue
+	**/
+	public double getDouble(string key, double defaultValue = 0.0) {
+		Object value = get(key);
+		if(value == null)
+			return defaultValue;
+		else
+			return (double)value;
+	}
 
     /**
      * Encode a map into JSON text and write it to out.
